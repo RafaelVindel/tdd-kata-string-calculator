@@ -5,14 +5,17 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 public class StringCalculatorTest {
 
     private StringCalculator sut;
+    private StringSplitter stringSplitter;
 
     @Before
     public void setUp() {
-        sut = new StringCalculator();
+        stringSplitter = mock(StringSplitter.class);
+        sut = new StringCalculator(stringSplitter);
     }
 
     @Test
