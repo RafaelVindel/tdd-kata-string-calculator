@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class StringCalculator {
 
+    private final StringSplitter stringSplitter;
+
+    public StringCalculator(StringSplitter stringSplitter) {
+        this.stringSplitter = stringSplitter;
+    }
+
     public int add(String numbers) {
         if(!numbers.isEmpty()) {
             final String[] numbersArray = stringSplitter.split(numbers);
