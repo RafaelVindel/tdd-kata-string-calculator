@@ -12,4 +12,10 @@ public class StringCalculatorTest {
         final StringCalculator sut = new StringCalculator();
         assertThat(0, equalTo(sut.add("")));
     }
+
+    @Test
+    public void shouldReturnNumberWhenAddIsInvokedWithASingleNumberString() {
+        final StringCalculator sut = new StringCalculator();
+        assertThat(5, equalTo(sut.add("5")));
+    }
 }
