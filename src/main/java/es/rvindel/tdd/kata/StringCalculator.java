@@ -10,12 +10,17 @@ public class StringCalculator {
         this.stringSplitter = stringSplitter;
     }
 
-    public int add(String numbers) {
+    public int add(String numbers) throws NegativeNumberException {
         if(!numbers.isEmpty()) {
             final int[] numbersArray = stringSplitter.split(numbers);
-            return Arrays
-                    .stream(numbersArray)
-                    .sum();
+            int sum = 0;
+            for(int number : numbersArray) {
+                if(number < 0) {
+                    throw new NegativeNumberException();
+                }
+                sum += number;
+            }
+            return sum;
         }
 
         return 0;
