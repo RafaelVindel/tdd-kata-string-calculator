@@ -29,4 +29,9 @@ public class StringCalculatorTest {
     public void shouldReturnSumWhenAddIsInvokedWithTwoNumbersSeparatedByComaString() {
         assertThat(7, equalTo(sut.add("3,4")));
     }
+
+    @Test
+    public void shouldReturnSumWhenAddIsInvokedWithMoreThanTwoNumbersSeparatedByComaString() {
+        assertThat(25, equalTo(sut.add("3,4,5,6,7")));
+    }
 }
