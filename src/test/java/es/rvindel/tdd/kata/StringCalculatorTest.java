@@ -48,4 +48,10 @@ public class StringCalculatorTest {
         when(stringSplitter.split("3,4\n5,6\n7")).thenReturn(new int[] {3, 4, 5, 6, 7});
         assertThat(25, equalTo(sut.add("3,4\n5,6\n7")));
     }
+    
+    @Test(expected = NegativeNumberException.class)
+    public void shouldThrowNegativeNumberExceptionWhenNegativeNumberIsDetected() {
+        when(stringSplitter.split("3,4\n-5,6\n7")).thenReturn(new int[] {3, 4, -5, 6, 7});
+        sut.add("3,4\n-5,6\n7");
+    }
 }
