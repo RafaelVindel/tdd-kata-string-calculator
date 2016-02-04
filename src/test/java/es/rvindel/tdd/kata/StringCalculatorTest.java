@@ -24,4 +24,9 @@ public class StringCalculatorTest {
     public void shouldReturnNumberWhenAddIsInvokedWithASingleNumberString() {
         assertThat(5, equalTo(sut.add("5")));
     }
+
+    @Test
+    public void shouldReturnSumWhenAddIsInvokedWithTwoNumbersSeparatedByComaString() {
+        assertThat(7, equalTo(sut.add("3,4")));
+    }
 }
