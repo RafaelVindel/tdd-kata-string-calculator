@@ -1,11 +1,18 @@
 package es.rvindel.tdd.kata;
 
+import java.util.Arrays;
+
 public class StringCalculator {
 
     public int add(String numbers) {
         if(!numbers.isEmpty()) {
-            return Integer.parseInt(numbers);
+            final String[] numbersArray = numbers.split(",");
+            return Arrays.asList(numbersArray)
+                    .stream()
+                    .mapToInt(number -> Integer.parseInt(number))
+                    .sum();
         }
+
         return 0;
     }
 }
