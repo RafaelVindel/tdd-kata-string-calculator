@@ -39,4 +39,9 @@ public class StringSplitterTest {
     public void shouldReturnArrayWithSameNumbersWhenSplitIsInvokedWithMoreThanTwoNumbersSeparatedByComaOrReturnCharacterString() {
         assertThat(new int[] {1, 2, 3, 4, 5}, equalTo(sut.split("1,2\n3,4\n5")));
     }
+
+    @Test
+    public void shouldReturnArrayWithSameNumbersWhenSplitIsInvokedWithMoreThanTwoNumbersSeparatedByCustomSeparatorString() {
+        assertThat(new int[] {1, 2, 3, 4, 5}, equalTo(sut.split("//;\n1;2;3;4;5")));
+    }
 }
